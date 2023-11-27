@@ -1,5 +1,5 @@
-import { SET_SEARCH_TEXT, SEARCH_NEWS_BY_SLUG } from "./types";
-import NewsPostService from "../services/newsService";
+import { SET_SEARCH_TEXT, SEARCH_NEWS_BY_SLUG } from './types';
+import NewsPostService from '../services/newsService';
 
 export const setSearchText = (text) => (dispatch) => {
   dispatch({

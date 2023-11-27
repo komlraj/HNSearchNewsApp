@@ -1,4 +1,4 @@
-const ErrorMessage = ({ message = "Oops!, something went wrong" }) => {
+const ErrorMessage = ({ message = 'Oops!, something went wrong' }) => {
   // if the message is present, then we are showing the message
   return <div className="error-message">{message}</div>;
 };

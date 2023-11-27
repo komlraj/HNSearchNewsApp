@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
-import { noTitleText } from "../../constants";
-import { generateRandomColor } from "../../utils";
+/* eslint-disable camelcase */
+import { Link } from 'react-router-dom';
+import { noTitleText } from '../../constants';
+import { generateRandomColor } from '../../utils';
 
 const NewsCard = ({ news }) => {
   const { title, objectID, author, points, num_comments } = news;

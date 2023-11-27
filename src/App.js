@@ -1,22 +1,22 @@
-import { lazy } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ErrorBoundary } from "react-error-boundary";
-import Header from "./components/Header";
-import IntervalServalError from "./components/Common/IntervalServerError";
-import "./App.scss";
+import { lazy } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ErrorBoundary } from 'react-error-boundary';
+import Header from './components/Header';
+import IntervalServalError from './components/Common/IntervalServerError';
+import './App.scss';
 
-const Main = lazy(() => import("./components/Main/Main"));
-const NewsDetails = lazy(() => import("./components/NewsDetails"));
+const Main = lazy(() => import('./components/Main/Main'));
+const NewsDetails = lazy(() => import('./components/NewsDetails'));
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
+    path: '/',
+    name: 'Home',
     element: <Main />,
   },
   {
-    path: "/news/:id",
-    name: "News Details",
+    path: '/news/:id',
+    name: 'News Details',
     element: <NewsDetails />,
   },
 ];

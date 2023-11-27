@@ -1,4 +1,4 @@
-import axios from "../axios";
+import axios from '../axios';
 
 const searchNewsBySlug = (slug) => {
   return axios.get(`/search?query=${slug}`);

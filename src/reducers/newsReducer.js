@@ -1,4 +1,4 @@
-import { SET_SEARCH_TEXT, SEARCH_NEWS_BY_SLUG } from "../actions/types";
+import { SET_SEARCH_TEXT, SEARCH_NEWS_BY_SLUG } from '../actions/types';
 
 const initialState = [];
 

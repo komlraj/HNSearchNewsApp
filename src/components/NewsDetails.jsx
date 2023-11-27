@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
-import { getNewsById } from "../actions/news";
-import Loading from "./Common/Loading";
-import ErrorMessage from "./Common/ErrorMessage";
-import { searchNewsLoadingMessage, noCommentsText } from "../constants";
-import { generateRandomColor } from "../utils";
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { getNewsById } from '../actions/news';
+import Loading from './Common/Loading';
+import ErrorMessage from './Common/ErrorMessage';
+import { searchNewsLoadingMessage, noCommentsText } from '../constants';
+import { generateRandomColor } from '../utils';
 
 const NewsDetails = () => {
   // using react hooks
@@ -39,7 +39,7 @@ const NewsDetails = () => {
   else if (error) return <ErrorMessage message={error} />;
   // if the news details are present, then we are showing the news details
   else {
-    const { title, points, children, author, type } = newsDetails || {};
+    const { title, points, children, author } = newsDetails || {};
     return (
       <div className="details-page">
         <h4 className="details-page__title">{title}</h4>

@@ -1,4 +1,4 @@
-const Loading = ({ additionalMessage = "" }) => {
+const Loading = ({ additionalMessage = '' }) => {
   return (
     <div>
       <div className="lds-facebook">

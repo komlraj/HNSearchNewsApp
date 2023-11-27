@@ -1,8 +1,8 @@
-import axios from "axios";
+import axios from 'axios';
 
 export default axios.create({
-  baseURL: "http://hn.algolia.com/api/v1",
+  baseURL: 'http://hn.algolia.com/api/v1',
   headers: {
-    "Content-type": "application/json",
+    'Content-type': 'application/json',
   },
 });

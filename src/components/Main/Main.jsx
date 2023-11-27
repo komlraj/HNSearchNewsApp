@@ -1,19 +1,19 @@
 // Desc: This file contains the main component which is the home page of the application
-import { useCallback, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import debounce from "lodash.debounce";
-import ResponsivePagination from "react-responsive-pagination";
-import "react-responsive-pagination/themes/classic.css";
+import { useCallback, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import debounce from 'lodash.debounce';
+import ResponsivePagination from 'react-responsive-pagination';
+import 'react-responsive-pagination/themes/classic.css';
 
-import { setSearchText, searchNewsBySlug } from "../../actions/news";
+import { setSearchText, searchNewsBySlug } from '../../actions/news';
 import {
   searchBoxPlaceholder,
   searchNewsLoadingMessage,
   noNewsFoundMessage,
   emptySearchMessage,
-} from "../../constants";
-import NewsCard from "./NewsCard";
-import Loading from "../Common/Loading";
+} from '../../constants';
+import NewsCard from './NewsCard';
+import Loading from '../Common/Loading';
 
 const Main = () => {
   // using redux hooks
@@ -23,7 +23,7 @@ const Main = () => {
 
   const [isSearching, setSearching] = useState(false);
   const [currentSearchText, setCurrentSearchText] = useState(
-    searchTextFromStore || ""
+    searchTextFromStore || ''
   );
   const [currentNewsList, setCurrentNewsList] = useState(
     newsList?.slice(0, 10)
@@ -73,7 +73,7 @@ const Main = () => {
           <>
             <div className="pagination-wrapper">
               <h4 className="search-result">
-                Search Results{" "}
+                Search Results{' '}
                 <span className="search-result__count">
                   ({newsList?.length})
                 </span>
@@ -94,7 +94,7 @@ const Main = () => {
           </>
         ) : (
           <div className="mt-50 fs-24">
-            {noNewsFoundMessage}{" "}
+            {noNewsFoundMessage}{' '}
             <bold className="bold-text">{currentSearchText}</bold>
           </div>
         )
