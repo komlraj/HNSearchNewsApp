@@ -22,3 +22,12 @@ export const searchNewsBySlug = (slug) => async (dispatch) => {
     return Promise.reject(err);
   }
 };
+
+export const getNewsById = (id) => async () => {
+  try {
+    const res = await NewsPostService.getNewsById(id);
+    return Promise.resolve(res?.data);
+  } catch (err) {
+    return Promise.reject(err);
+  }
+};
