@@ -2,6 +2,9 @@
 import { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import debounce from "lodash.debounce";
+import ResponsivePagination from "react-responsive-pagination";
+import "react-responsive-pagination/themes/classic.css";
+
 import { setSearchText, searchNewsBySlug } from "../../actions/news";
 import {
   searchBoxPlaceholder,
@@ -16,12 +19,16 @@ const Main = () => {
   // using redux hooks
   const dispatch = useDispatch();
   const searchTextFromStore = useSelector((state) => state?.news?.searchText);
+  const newsList = useSelector((state) => state?.news?.newsList) || [];
 
   const [isSearching, setSearching] = useState(false);
   const [currentSearchText, setCurrentSearchText] = useState(
     searchTextFromStore || ""
   );
-  const newsList = useSelector((state) => state?.news?.newsList);
+  const [currentNewsList, setCurrentNewsList] = useState(
+    newsList?.slice(0, 10)
+  );
+  const [currentPage, setCurrentPage] = useState(1);
 
   // debouncing the search functionality
   const delayedFunc = useCallback(
@@ -39,6 +46,13 @@ const Main = () => {
     setCurrentSearchText(target?.value);
     setSearching(true);
     delayedFunc(target?.value);
+    setCurrentPage(1);
+  };
+
+  // handlePageChange is called when the page is changed
+  const handlePageChange = (num) => {
+    setCurrentPage(num);
+    setCurrentNewsList(newsList?.slice((num - 1) * 10, num * 10));
   };
 
   return (
@@ -57,11 +71,20 @@ const Main = () => {
       currentSearchText ? (
         newsList?.length > 0 ? (
           <>
-            <h4 className="search-result">
-              Search Results{" "}
-              <span className="search-result__count">({newsList?.length})</span>
-            </h4>
-            {newsList?.map(
+            <div className="pagination-wrapper">
+              <h4 className="search-result">
+                Search Results{" "}
+                <span className="search-result__count">
+                  ({newsList?.length})
+                </span>
+              </h4>
+              <ResponsivePagination
+                current={currentPage}
+                total={newsList?.length / 10}
+                onPageChange={(num) => handlePageChange(num)}
+              />
+            </div>
+            {currentNewsList?.map(
               (
                 news // Link is used to navigate to the news details page
               ) => (

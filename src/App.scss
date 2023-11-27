@@ -1,4 +1,5 @@
 :root {
+  --primary-blue: #0d6efd;
   --error-red: #c31010;
   --white: #fff;
   --black: #000;
@@ -38,6 +39,9 @@ section {
   margin-bottom: 50px;
   padding: 0 10%;
   background-color: var(--light-gray);
+  a, h1 {
+    color: var(--primary-blue);
+  }
 }
 
 // Path: src/components/Main
@@ -55,7 +59,6 @@ section {
   .search-result {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
     font-weight: 400;
     .search-result__count {
       font-size: 16px;
@@ -98,6 +101,13 @@ section {
     }
   }
 }
+.pagination-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
 .news-card__sub-details {
   color: var(--gray);
   font-size: 12px;
