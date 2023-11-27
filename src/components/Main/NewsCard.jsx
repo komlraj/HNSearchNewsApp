@@ -1,13 +1,10 @@
 import { Link } from "react-router-dom";
 import { noTitleText } from "../../constants";
+import { generateRandomColor } from "../../utils";
 
 const NewsCard = ({ news }) => {
   const { title, objectID, author, points, num_comments } = news;
 
-  const generateRandomColor = () => {
-    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    return `#${randomColor}`;
-  };
 
   return (
     <Link to={`/news/${objectID}`}>
