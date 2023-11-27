@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import IntervalServalError from "./components/Common/IntervalServerError";
 import "./App.scss";
 
-const Main = lazy(() => import("./components/Main"));
+const Main = lazy(() => import("./components/Main/Main"));
 const NewsDetails = lazy(() => import("./components/NewsDetails"));
 
 const routes = [
