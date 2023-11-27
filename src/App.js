@@ -1,7 +1,9 @@
 import { lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ErrorBoundary } from "react-error-boundary";
 import Header from "./components/Header";
-import "./App.css";
+import IntervalServalError from "./components/Common/IntervalServerError";
+import "./App.scss";
 
 const Main = lazy(() => import("./components/Main"));
 const NewsDetails = lazy(() => import("./components/NewsDetails"));
@@ -22,14 +24,16 @@ const routes = [
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header />
-        <Routes>
-          {routes?.map(({ path, name, element }) => (
-            <Route key={name} path={path} element={element} />
-          ))}
-        </Routes>
-      </Router>
+      <ErrorBoundary FallbackComponent={IntervalServalError}>
+        <Router>
+          <Header />
+          <Routes>
+            {routes?.map(({ path, name, element }) => (
+              <Route key={name} path={path} element={element} />
+            ))}
+          </Routes>
+        </Router>
+      </ErrorBoundary>
     </div>
   );
 }
