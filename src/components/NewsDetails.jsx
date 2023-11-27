@@ -22,7 +22,6 @@ const NewsDetails = () => {
     if (id) {
       dispatch(getNewsById(id))
         .then((res) => {
-          console.log("res", res);
           setNewsDetails(res);
           setIsLoading(false);
         })
