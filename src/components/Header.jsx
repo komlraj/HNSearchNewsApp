@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import { searchHackersNewsText } from "../constants";
 
 const Header = () => {
   return (
-    <header>
+    <header className="header">
       <Link to={"/"}>
-        <h1>Search Hacker News</h1>
+        <h1>{searchHackersNewsText}</h1>
       </Link>
     </header>
   );
