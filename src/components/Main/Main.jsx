@@ -1,5 +1,5 @@
 // Desc: This file contains the main component which is the home page of the application
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import debounce from 'lodash.debounce';
 import ResponsivePagination from 'react-responsive-pagination';
@@ -25,10 +25,12 @@ const Main = () => {
   const [currentSearchText, setCurrentSearchText] = useState(
     searchTextFromStore || ''
   );
-  const [currentNewsList, setCurrentNewsList] = useState(
-    newsList?.slice(0, 10)
-  );
+  const [currentNewsList, setCurrentNewsList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    setCurrentNewsList(newsList?.slice(0, 10));
+  }, [newsList]);
 
   // debouncing the search functionality
   const delayedFunc = useCallback(
