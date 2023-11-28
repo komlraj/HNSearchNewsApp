@@ -38,8 +38,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 This web application is built using the <a href="https://hn.algolia.com/api">HN Search API</a>, allowing users to search for Hacker News posts and view the details of each post.
 ### What You Can Do
 
