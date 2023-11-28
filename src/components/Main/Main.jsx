@@ -29,7 +29,7 @@ const Main = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    setCurrentNewsList(newsList?.slice(0, 10));
+    if(newsList?.length) setCurrentNewsList(newsList?.slice(0, 10));
   }, [newsList]);
 
   // debouncing the search functionality
