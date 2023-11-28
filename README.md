@@ -1,70 +1,141 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT -->
+<br />
+<div align="center">
 
-## Available Scripts
+  <h3 align="center">Search Hacker News Webapp</h3>
 
-In the project directory, you can run:
+  <p align="center">
+    <a href="https://search-hacker-news-4259cc4a58c5.herokuapp.com/">View Demo</a>
+  </p>
+</div>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#running-the-application">Running the application</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This web application is built using the <a href="https://hn.algolia.com/api">HN Search API</a>, allowing users to search for Hacker News posts and view the details of each post.
+### What You Can Do
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Search for Posts:** Look for specific topics or articles by typing keywords into the search bar.
+- **See Search Results:** Below the search bar, you'll see a list of posts related to your search.
+- **How It Works:** When you search, the website talks to the Hacker News database to find posts matching your words:
+  
+   Example of What Happens Behind the Scenes: 
+   When you type something like 'test', the website asks Hacker News for posts related to 'test'.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The website quickly shows you the results you're looking for.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Details About Posts
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Explore Post Details:** Clicking on a post takes you to a page with more information about that post.
+- **Getting Details:** By using a special code from the search results, the website fetches all the details about a post:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Example Behind-the-Scenes Action:
 
-## Learn More
+When you click on a post, the website talks to Hacker News again to get all the details about that specific post.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**What You'll See:**
 
-### Code Splitting
+- **Post Title:** Shows the main title of the post.
+- **Points:** Tells you how popular the post is.
+- **Comments:** Displays a list of all the comments people have made about that post.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Built With
 
-### Advanced Configuration
+* [![React][React.js]][React-url]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+<!-- GETTING STARTED -->
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Clone the Repo
+```
+git clone https://github.com/komlraj/search-hacker-news/
+```
+Go into Folder
+```
+cd search-hacker-news
+```
+Install Dependency
+```
+yarn or npm install
+```
+
+## Running the application
+```
+yarn start or npm start
+```
+
+## Code style
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+
+<!-- BUILT WITH -->
+## Built With
+1.  [ReactJs](https://reactjs.org/) - Frontend UI Framework
+2.  [Redux](https://redux.js.org/) - State management
+3.  [React Router](https://reacttraining.com/react-router/) - For Routing
+4.  [Lodash Debounce](https://www.npmjs.com/package/lodash.debounce) - For Debounce function
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- CONTACT -->
+## Contact
+
+Your Name - [@_komlraj](https://twitter.com/_komlraj) - 13kmlraj@gmail.com
+
+Project Link: [https://github.com/komlraj/search-hacker-news](https://github.com/komlraj/search-hacker-news/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgments
+
+* Hat tip to anyone whose code was used
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[lodash.com]: https://www.npmjs.com/package/lodash.debounce
